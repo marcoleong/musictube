@@ -234,26 +234,29 @@ class MusicController extends Controller
 
         $entity = $em->getRepository('LMarcoMusicTubeBundle:Music')->findOneById($id);
 
-        $entity->setStatus(1);
-        $em->flush($entity);
-
-        $process = new Process("youtube-dl --extract-audio --audio-format mp3 --audio-quality 320k ".$entity->getYouTubeUrl(), '/private/tmp');
-        $process->run();
-
-        if($process->isSuccessful()){
-            $entity->setStatus(2);
+        if($entity->getStatus() === 'NOT_CONVERTED')
+        {
+            $entity->setStatus(1);
             $em->flush($entity);
 
-            $tmpFs = new Filesystem(new LocalAdapter('/private/tmp/'));
+            $process = new Process("youtube-dl --extract-audio --audio-format mp3 --audio-quality 320k ".$entity->getYouTubeUrl(), '/private/tmp');
+            $process->run();
 
-            $musicFs = new Filesystem(new LocalAdapter($this->container->getParameter('kernel.root_dir').'/../web/music_files/'));
+            if($process->isSuccessful()){
+                $entity->setStatus(2);
+                $em->flush($entity);
 
-            if($tmpFs->has($entity->getVideoId().'.aac')){
-                $file = $tmpFs->get($entity->getVideoId().'.aac');
-                $musicFs->write($entity->getVideoId().'.aac',$file->getContent());
-                $tmpFs->delete($entity->getVideoId().'.aac');
-            }
-        }        
+                $tmpFs = new Filesystem(new LocalAdapter('/private/tmp/'));
+
+                $musicFs = new Filesystem(new LocalAdapter($this->container->getParameter('kernel.root_dir').'/../web/music_files/'));
+
+                if($tmpFs->has($entity->getVideoId().'.aac')){
+                    $file = $tmpFs->get($entity->getVideoId().'.aac');
+                    $musicFs->write($entity->getVideoId().'.aac',$file->getContent());
+                    $tmpFs->delete($entity->getVideoId().'.aac');
+                }
+            }     
+        }
        
         return new Response('',200);
     }

@@ -6,5 +6,4 @@ build/
 vendor
 composer.phar
 .DS_Store
-Capfile
 app/config/parameters.yml

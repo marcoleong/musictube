@@ -19,7 +19,6 @@ set  :use_composer, true
 
 set  :shared_children,     [app_path + "/logs", web_path + "/uploads", "vendor"]
 set  :shared_files,      ["app/config/parameters.yml"]
-set  :deploy_via, :remote_cache
 
 set :dump_assetic_assets, true
 set :php_bin, "/Applications/MAMP/bin/php/php5.3.6/bin/php"

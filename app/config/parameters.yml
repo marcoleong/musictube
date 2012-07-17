@@ -2,9 +2,9 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     localhost
     database_port:     ~
-    database_name:     symfony
+    database_name:     yt2mp3
     database_user:     root
-    database_password: ~
+    database_password: root
 
     mailer_transport:  smtp
     mailer_host:       localhost
@@ -12,4 +12,4 @@ parameters:
     mailer_password:   ~
 
     locale:            en
-    secret:            ThisTokenIsNotSoSecretChangeIt
+    secret:            984c444a9b1e780a165d89a3e6d9563e

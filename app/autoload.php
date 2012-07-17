@@ -13,4 +13,7 @@ if (!function_exists('intl_get_error_code')) {
 
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
+set_include_path(__DIR__.'/../vendor/zend/gdata/library'.PATH_SEPARATOR.get_include_path());
+
+
 return $loader;

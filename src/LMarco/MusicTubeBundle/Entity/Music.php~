@@ -1,0 +1,183 @@
+<?php
+
+namespace LMarco\MusicTubeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LMarco\MusicTubeBundle\Entity\Music
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Music
+{
+
+    public static $statusCode = array( 0 => 'NOT_CONVERTED',
+                                       1 => 'CONVERTING',
+                                       2 => 'CONVERTED' );
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $title
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+
+    /**
+     * @var boolean $converted
+     *
+     * @ORM\Column(name="status", type="int")
+     */
+    private $status = 0;
+
+    /**
+     * @var string $youTubeUrl
+     *
+     * @ORM\Column(name="youTubeUrl", type="string", length=255)
+     */
+    private $youTubeUrl;
+
+    /**
+     * @var string $localPath
+     *
+     * @ORM\Column(name="localPath", type="string", length=255, nullable=true)
+     */
+    private $localPath;
+
+    /**
+     * @var string $videoId
+     *
+     * @ORM\Column(name="videoId", type="string", length=255)
+     */
+    private $videoId;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Music
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set converted
+     *
+     * @param boolean $converted
+     * @return Music
+     */
+    public function setConverted($converted)
+    {
+        $this->converted = $converted;
+        return $this;
+    }
+
+    /**
+     * Get converted
+     *
+     * @return boolean 
+     */
+    public function getConverted()
+    {
+        return $this->converted;
+    }
+
+    /**
+     * Set localPath
+     *
+     * @param string $localPath
+     * @return Music
+     */
+    public function setLocalPath($localPath)
+    {
+        $this->localPath = $localPath;
+        return $this;
+    }
+
+    /**
+     * Get localPath
+     *
+     * @return string 
+     */
+    public function getLocalPath()
+    {
+        return $this->localPath;
+    }
+
+    /**
+     * Set youTubeUrl
+     *
+     * @param string $youTubeUrl
+     * @return Music
+     */
+    public function setYouTubeUrl($youTubeUrl)
+    {
+        $this->youTubeUrl = $youTubeUrl;
+        return $this;
+    }
+
+    /**
+     * Get youTubeUrl
+     *
+     * @return string 
+     */
+    public function getYouTubeUrl()
+    {
+        return $this->youTubeUrl;
+    }
+
+    /**
+     * Set videoId
+     *
+     * @param string $videoId
+     * @return Music
+     */
+    public function setVideoId($videoId)
+    {
+        $this->videoId = $videoId;
+        return $this;
+    }
+
+    /**
+     * Get videoId
+     *
+     * @return string 
+     */
+    public function getVideoId()
+    {
+        return $this->videoId;
+    }
+}

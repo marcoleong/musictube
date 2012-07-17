@@ -1,5 +1,5 @@
 {
-    "hash": "ab7ccf177098603cace942212179431f",
+    "hash": "d26772d92f5c6105ef5c7ad61e1e491f",
     "packages": [
         {
             "package": "doctrine/common",
@@ -24,6 +24,18 @@
             "commit-date": "1341676080"
         },
         {
+            "package": "friendsofsymfony/jsrouting-bundle",
+            "version": "dev-master",
+            "source-reference": "1692ba9e4500b75001ec945993d4b7b8cec05a16",
+            "commit-date": "1339679434"
+        },
+        {
+            "package": "imagine/Imagine",
+            "version": "dev-master",
+            "source-reference": "v0.2.8",
+            "commit-date": "1322638721"
+        },
+        {
             "package": "jms/aop-bundle",
             "version": "1.0.0"
         },
@@ -44,6 +56,34 @@
             "version": "1.1.0"
         },
         {
+            "package": "knplabs/gaufrette",
+            "version": "dev-master",
+            "source-reference": "67df02e98ac63e28670c2032f15331276869c89e",
+            "commit-date": "1340261986"
+        },
+        {
+            "package": "knplabs/knp-components",
+            "version": "dev-master",
+            "source-reference": "99ea408dc2a7c3616e688ffe67e3248ece69ff0e",
+            "commit-date": "1339767068"
+        },
+        {
+            "package": "knplabs/knp-menu",
+            "version": "1.1.x-dev",
+            "source-reference": "v1.1.2",
+            "commit-date": "1339345240"
+        },
+        {
+            "package": "knplabs/knp-menu-bundle",
+            "version": "v1.1.0"
+        },
+        {
+            "package": "knplabs/knp-paginator-bundle",
+            "version": "dev-master",
+            "source-reference": "427db8350ae57659645ba35480bbe1194c1c695f",
+            "commit-date": "1339165136"
+        },
+        {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
             "alias-pretty-version": "1.1.x-dev",
@@ -56,26 +96,138 @@
             "commit-date": "1339515714"
         },
         {
+            "package": "kriswallsmith/buzz",
+            "version": "dev-master",
+            "source-reference": "2ba5da13b1b03590f0164b3fb61578078d671fcc",
+            "commit-date": "1341070218"
+        },
+        {
+            "package": "masnun/phptube",
+            "version": "dev-master",
+            "source-reference": "v1.0.0",
+            "commit-date": "1340892652"
+        },
+        {
             "package": "monolog/monolog",
-            "version": "1.1.0"
+            "version": "1.0.2"
+        },
+        {
+            "package": "mopa/bootstrap-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "mopa/bootstrap-bundle",
+            "version": "dev-master",
+            "source-reference": "85ff8e83ab4f2a3ef831ee8fb503368d893d6452",
+            "commit-date": "1342177971"
+        },
+        {
+            "package": "mopa/composer-bridge",
+            "version": "dev-master",
+            "source-reference": "84b8bf537163b4470f14d02554a0e9eb5d300172",
+            "commit-date": "1337596733"
+        },
+        {
+            "package": "php-ffmpeg/php-ffmpeg",
+            "version": "dev-master",
+            "source-reference": "b6b8bd502131e0dd82f53517ccc84d3de2c09424",
+            "commit-date": "1340268165"
+        },
+        {
+            "package": "processing/processing",
+            "version": "0.1.0"
+        },
+        {
+            "package": "processing/processing-bundle",
+            "version": "dev-master",
+            "source-reference": "90e009b4fe93e56df51acce2ed18f8373cab11f5",
+            "commit-date": "1330073958"
         },
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "b2b18d749d0ed24b48d1932b21f3e8b1e8d9c1f2",
-            "commit-date": "1341919005"
+            "source-reference": "77323c97860fc2f73d988b2020ae414faebed153",
+            "commit-date": "1342159333"
         },
         {
             "package": "sensio/framework-extra-bundle",
             "version": "dev-master",
-            "source-reference": "4f54e5d5fb3b54fb107892684018f3704934c48d",
-            "commit-date": "1341126219"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "sensio/framework-extra-bundle",
+            "version": "dev-master",
+            "source-reference": "e9ac8f1a911ed29e30296c7f1549f53d4c94eddf",
+            "commit-date": "1342084432"
         },
         {
             "package": "sensio/generator-bundle",
             "version": "dev-master",
-            "source-reference": "43ed45c48db18e4a0e48aec0c098f42e56e22d36",
-            "commit-date": "1340138445"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "sensio/generator-bundle",
+            "version": "dev-master",
+            "source-reference": "c17dbddefe517e3adfcbeaa1ab7cef3e572d29c6",
+            "commit-date": "1342195488"
+        },
+        {
+            "package": "sonata-project/admin-bundle",
+            "version": "dev-master",
+            "source-reference": "8ebc06ce4bfd632acd11022093a90225e10534a1",
+            "commit-date": "1342045725"
+        },
+        {
+            "package": "sonata-project/block-bundle",
+            "version": "dev-master",
+            "source-reference": "40b435dab9db1f6bf1f311af1635712924a0f361",
+            "commit-date": "1340007353"
+        },
+        {
+            "package": "sonata-project/cache-bundle",
+            "version": "dev-master",
+            "source-reference": "5b966e7350636750df7e45920acb30946415ba6d",
+            "commit-date": "1335863548"
+        },
+        {
+            "package": "sonata-project/doctrine-extensions",
+            "version": "dev-master",
+            "source-reference": "0a316790871e1ea7f019e2313667570eabd270b9",
+            "commit-date": "1332462393"
+        },
+        {
+            "package": "sonata-project/easy-extends-bundle",
+            "version": "dev-master",
+            "source-reference": "643baef65930a9d05844b3ebb095304ad3127978",
+            "commit-date": "1341350670"
+        },
+        {
+            "package": "sonata-project/exporter",
+            "version": "dev-master",
+            "source-reference": "bcdfd50bc3118173d914e790921701ab26fb6b14",
+            "commit-date": "1338844924"
+        },
+        {
+            "package": "sonata-project/jquery-bundle",
+            "version": "dev-master",
+            "source-reference": "785870afce016cc387fadb361ad52c3d4a2e7fe6",
+            "commit-date": "1339857469"
+        },
+        {
+            "package": "sonata-project/media-bundle",
+            "version": "dev-master",
+            "source-reference": "4c2290eb3e56da80273e6f0be4c4c4ee0cc3ef55",
+            "commit-date": "1341787232"
+        },
+        {
+            "package": "sonata-project/notification-bundle",
+            "version": "dev-master",
+            "source-reference": "c52d09d10dc99e7a2b3c976dd65be2b071bebbf6",
+            "commit-date": "1339063222"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -86,14 +238,20 @@
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "f51b5f33c83b48faea75f1285f99a2e8f1c66f75",
-            "commit-date": "1341746460"
+            "source-reference": "8b2aa953f87da228ba413e8fb1372e49c1374050",
+            "commit-date": "1342198037"
         },
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "8fe7b898b08103c1d6fce64c3e279a7afd61adfc",
-            "commit-date": "1340234971"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/assetic-bundle",
+            "version": "dev-master",
+            "source-reference": "ed933dcfa45f00b6bc6d7727007403f3ff429e5a",
+            "commit-date": "1342126277"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -116,8 +274,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "5487a1f0767f96264823b4a128ad9e68d4b0220b",
-            "commit-date": "1341915525"
+            "source-reference": "28abff81471ba640789ad4b7e2854147a109bdba",
+            "commit-date": "1342273218"
         },
         {
             "package": "twig/extensions",
@@ -134,13 +292,29 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "26eb0a2653eade50dffdd31b11ca454232dea8cf",
-            "commit-date": "1341423205"
+            "source-reference": "17e2c36a58c4b17a58a3befa783d16ac19776df5",
+            "commit-date": "1342275003"
+        },
+        {
+            "package": "twitter/bootstrap",
+            "version": "master",
+            "source-reference": "master",
+            "commit-date": "1339090286"
+        },
+        {
+            "package": "xaav/queue-bundle",
+            "version": "dev-master",
+            "source-reference": "68df9a399e33b7eef6e4c60b9700523e39f98a35",
+            "commit-date": "1319405173"
+        },
+        {
+            "package": "zend/gdata",
+            "version": "dev-master",
+            "source-reference": "827dc8696f1e5b70a4c507355877cdbab60fb3fa",
+            "commit-date": "1336132669"
         }
     ],
-    "packages-dev": [
-
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
@@ -153,6 +327,15 @@
         "symfony/monolog-bundle": 20,
         "sensio/distribution-bundle": 20,
         "sensio/framework-extra-bundle": 20,
-        "sensio/generator-bundle": 20
+        "sensio/generator-bundle": 20,
+        "php-ffmpeg/php-ffmpeg": 20,
+        "mopa/bootstrap-bundle": 20,
+        "knplabs/knp-paginator-bundle": 20,
+        "zend/gdata": 20,
+        "masnun/phptube": 20,
+        "sonata-project/media-bundle": 20,
+        "processing/processing-bundle": 20,
+        "friendsofsymfony/jsrouting-bundle": 20,
+        "xaav/queue-bundle": 20
     }
 }

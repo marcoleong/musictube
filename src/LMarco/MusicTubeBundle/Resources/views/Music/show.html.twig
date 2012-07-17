@@ -1,0 +1,44 @@
+{% extends 'LMarcoMusicTubeBundle::layout.html.twig' %}
+{% block content %}
+<h1>Music</h1>
+
+<table class="table record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ entity.title }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ entity.status }}</td>
+        </tr>
+        <tr>
+            <th>Youtube</th>
+            <td>{{ entity.youTubeUrl }}</td>
+        </tr>
+        <tr>
+            <th>Localpath</th>
+            <td>{{ entity.localPath }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+        <a class="btn" href="{{ path('music') }}">
+            Back to the list
+        </a>
+
+        <a class="btn" href="{{ path('music_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+
+        <form action="{{ path('music_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+
+{% endblock %}

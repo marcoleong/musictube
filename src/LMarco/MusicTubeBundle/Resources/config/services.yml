@@ -1,0 +1,33 @@
+services:
+    musictube.navbar:
+        class: '%mopa_bootstrap.navbar.generic%'
+        scope: request
+        arguments:
+            - { leftmenu: @musictube.navbar_main_menu=, rightmenu: @musictube.navbar_right_menu= }
+            - {}
+            - { title: "Music Tube", titleRoute: "musictube_musictube_index", fixedTop: true, isFluid: false }
+        tags:
+            - { name: mopa_bootstrap.navbar, alias: frontendNavbar }
+
+    musictube.navbar_menu_builder:
+        class: LMarco\MusicTubeBundle\Menu\NavbarMenuBuilder
+        scope: request
+        arguments: [ '@knp_menu.factory', '@security.context' ]
+
+    musictube.navbar_main_menu:
+        class: Knp\Menu\MenuItem
+        factory_service: musictube.navbar_menu_builder
+        factory_method: createMainMenu
+        arguments: [ '@request' ]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: main }
+
+    musictube.navbar_right_menu:
+        class: Knp\Menu\MenuItem
+        factory_service: musictube.navbar_menu_builder
+        factory_method: createRightSideDropdownMenu
+        arguments: [ '@request' ]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: main }

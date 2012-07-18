@@ -25,7 +25,6 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new LMarco\MusicTubeBundle\LMarcoMusicTubeBundle(),
 
-            new Processing\Bundle\ProcessingBundle\ProcessingBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
         );

@@ -18,17 +18,12 @@
         "sensio/generator-bundle": "dev-master",
         "jms/security-extra-bundle": "1.1.*",
         "jms/di-extra-bundle": "1.0.*",
-        "php-ffmpeg/php-ffmpeg": "dev-master",
         "mopa/bootstrap-bundle": "dev-master",
         "twitter/bootstrap": "master",
         "knplabs/knp-paginator-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "1.1.*",
-        "zend/gdata": "dev-master",
-        "masnun/phptube":"dev-master",
         "sonata-project/media-bundle":"dev-master",
-        "processing/processing-bundle":"dev-master",
         "friendsofsymfony/jsrouting-bundle":"dev-master",
-        "xaav/queue-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

@@ -7,3 +7,5 @@ vendor
 composer.phar
 .DS_Store
 app/config/parameters.yml
+Capfile
+app/config/deploy.rb

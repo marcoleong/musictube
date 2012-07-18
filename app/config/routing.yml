@@ -6,9 +6,9 @@ LMarcoMusicTubeBundle:
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
     
-_processor:
-    resource: "@ProcessingBundle/Resources/config/routes.yml"
-    prefix: /_processing
+# _processor:
+#     resource: "@ProcessingBundle/Resources/config/routes.yml"
+#     prefix: /_processing
 
 # Internal routing configuration to handle ESI
 #_internal:

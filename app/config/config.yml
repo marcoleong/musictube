@@ -54,3 +54,17 @@ swiftmailer:
     password:  %mailer_password%
     spool:     { type: memory }
 
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        host:     localhost
+        port:     ~
+        dbname:   yt2mp3
+        user:     root
+        password: root
+        charset:  UTF8
+
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        auto_mapping: true
+

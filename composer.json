@@ -19,7 +19,7 @@
         "jms/security-extra-bundle": "1.1.*",
         "jms/di-extra-bundle": "1.0.*",
         "mopa/bootstrap-bundle": "dev-master",
-        "twitter/bootstrap": "master",
+        "twitter/bootstrap": "2.0.4",
         "knplabs/knp-paginator-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "1.1.*",
         "sonata-project/media-bundle":"dev-master",

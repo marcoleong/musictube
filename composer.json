@@ -54,10 +54,10 @@
            {
                "type": "package",
                "package": {
-                   "version": "master",
+                   "version": "2.0.4",
                    "name": "twitter/bootstrap",
                    "source": {
-                       "url": "https://github.com/twitter/bootstrap.git",
+                       "url": "git://github.com/twitter/bootstrap.git",
                        "type": "git",
                        "reference": "master"
                    },

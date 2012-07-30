@@ -1,21 +1,10 @@
-{% extends 'LMarcoMusicTubeBundle::layout.html.twig' %}
-{% block content %}
+<center>
+		<div id="jamtube-logo"><span>Beta</span></div>
+		<form action="{{ path('music_create') }}" method="post" {{ form_enctype(form) }} id="music-create-form">		    
+		    {{ form_widget(form.youTubeUrl , {'attr': { 'placeholder':'Copy URL here' } }) }}
 
-<h1>Music creation</h1>
-
-<form action="{{ path('music_create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <button type="submit">Create</button>
-    </p>
-</form>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('music') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
-
-{% endblock %}
+		    {{ form_rest(form) }}
+		        <button id="send-button"type="submit">Send</button>    
+		</form>
+		<a style="display:none;" id="download-button" href="#" target="_blank"><img src="/bundles/lmarcomusictube/img/download.png" /></a>
+</center>	

@@ -14,15 +14,25 @@ class YouTubeExtractor
 
 	public function getTitle()
 	{
-		$cmd = 'youtube-dl -e '.$this->youTubeUrl;
-        return $this->runCommand($cmd);
+		$cmd = '/usr/local/bin/youtube-dl -e '.$this->youTubeUrl;
+		$title = $this->runCommand($cmd);
+        if($title){
+        	return $title;
+        }else{
+        	return false;
+        }
 	}
 
 	public function getVideoId()
 	{
 		$url = $this->youTubeUrl;
-		parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
-		return $my_array_of_vars['v'];  
+		parse_str( parse_url( $url, PHP_URL_QUERY ), $vars );
+		return $vars['v'];  
+	}
+
+	public function getYouTubeUrl()
+	{
+		return $this->youTubeUrl;
 	}
 
 	private function runCommand($cmd)
@@ -31,6 +41,8 @@ class YouTubeExtractor
 		$process->run();
 		if($process->isSuccessful()) {
             return $process->getOutput();
+        }else{
+        	return false;
         }
 	}
 }

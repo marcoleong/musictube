@@ -4,11 +4,14 @@ namespace LMarco\MusicTubeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * LMarco\MusicTubeBundle\Entity\Music
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @UniqueEntity("videoId")
  */
 class Music
 {
@@ -57,9 +60,31 @@ class Music
     /**
      * @var string $videoId
      *
-     * @ORM\Column(name="videoId", type="string", length=255)
+     * @ORM\Column(name="videoId", type="string", length=255, unique=true)
      */
     private $videoId;
+
+    /**
+     * @var string $downloadable
+     *
+     * @ORM\Column(name="downloadable", type="boolean")
+     */
+    private $downloadable = false;
+
+    /**
+     * @var string $downloadPath
+     *
+     * @ORM\Column(name="downloadPath", type="string", length=255, nullable=true)
+     */
+    private $downloadPath;
+
+    /**
+     * @var string $format
+     *
+     * @ORM\Column(name="format", type="string", length=10, nullable=true)
+     */
+    private $format = 'mp3';
+
 
     /**
      * Get id
@@ -202,5 +227,76 @@ class Music
     {
         $statusCode = self::$statusCode;
         return $statusCode[$this->status];
+    }
+
+    /**
+     * Set downloadable
+     *
+     * @param boolean $downloadable
+     * @return Music
+     */
+    public function setDownloadable($downloadable)
+    {
+        $this->downloadable = $downloadable;
+        return $this;
+    }
+
+    /**
+     * Get downloadable
+     *
+     * @return boolean 
+     */
+    public function getDownloadable()
+    {
+        return $this->downloadable;
+    }
+
+    /**
+     * Set downloadPath
+     *
+     * @param string $downloadPath
+     * @return Music
+     */
+    public function setDownloadPath($downloadPath)
+    {
+        $this->downloadPath = $downloadPath;
+        return $this;
+    }
+
+    /**
+     * Get downloadPath
+     *
+     * @return string 
+     */
+    public function getDownloadPath()
+    {
+        return $this->downloadPath;
+    }
+
+    /**
+     * Set format
+     *
+     * @param string $format
+     * @return Music
+     */
+    public function setFormat($format)
+    {
+        $this->format = $format;
+        return $this;
+    }
+
+    /**
+     * Get format
+     *
+     * @return string 
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    public function getFilename()
+    {
+        return $this->videoId.'.'.$this->format;
     }
 }

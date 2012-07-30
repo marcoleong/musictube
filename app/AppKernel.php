@@ -20,12 +20,14 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
-            new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            // new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new LMarco\MusicTubeBundle\LMarcoMusicTubeBundle(),
 
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Snc\RedisBundle\SncRedisBundle(),
+
 
         );
 

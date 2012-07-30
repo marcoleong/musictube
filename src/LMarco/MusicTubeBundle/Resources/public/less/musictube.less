@@ -1,0 +1,122 @@
+@import "bp.less";
+@import "base.less";
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "bootstrap/buttons.less";
+@import "bootstrap/grid.less";
+@import "bootstrap/layouts.less";
+@import "bootstrap/responsive.less";
+@import "bootstrap/progress-bars.less";
+
+html { 
+	background: url(/bundles/lmarcomusictube/img/bg02.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	&, body {
+		height:100%;
+	}
+}
+
+div[role="main"] {
+	.container;
+	height:100%;
+	margin-bottom: -60px;
+}
+
+//the input tag
+#music-create-form {
+	width: 60%;
+	margin-top:80px;
+	position:relative;
+	& > input:first-child {
+		color: #333;
+		padding:10px 0px 10px 10px;
+		font-size:120%;
+		font-weight:100;
+		background-color:white;
+		border: 1px solid #999;
+		border-radius: 6px;
+		width:98.8%;
+		height:100%;
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		&:focus {
+			border-color: rgba(82,168,236,.8);
+			outline: 0;
+			outline: thin dotted \9; /* IE6-9 */
+			.box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+		}
+
+		&::-webkit-input-placeholder {font-family:'Lato', sans-serif;font-style:italic;color:#999;}
+		&:-moz-placeholder {font-family:'Lato', sans-serif;font-style:italic;color:#999;}
+	}
+}
+
+#jamtube-logo {
+	background: url('/bundles/lmarcomusictube/img/logo.png') no-repeat; 
+	height: 72px; 
+	width:255px; 
+	background-size: 255px 72px;
+	margin-top:20%;
+	position:relative;
+	& > span {
+		font-style:italic;
+		color:darken(rgb(192,165,192),10%);
+		position:absolute;
+		right:-30px;
+		top:3px;
+	}
+}
+
+#send-button {
+	position:absolute;
+	right:1px;
+	top:3px;
+	.btn;
+	.btn-large;
+	.buttonBackground(#eaeaea,darken(#eaeaea,10%));
+	&:hover {
+		.buttonBackground(darken(#eaeaea,10%),#eaeaea);
+	}
+}
+header a{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-style:italic;
+	text-decoration: none;
+	float:right;
+	margin: 5px 10% 0 0;
+	color:#eaeaea;
+	&:hover {
+		color:#eaeaea;
+		border-bottom:1px dotted #eaeaea;
+	}
+	&:visited {
+		color:#eaeaea;
+	}
+}
+footer {
+	font-family: 'Lato', sans-serif;	
+	font-weight:300;
+	color:white;
+	.text-stroke-sim(#555, 1px);
+	float:left;
+	padding-left:10px;
+}
+
+.progress {
+	height:38px;
+	& > div.bar {
+		height:38px;
+		text-align: right;
+		padding: 0px 10px 4px 0px;
+		font-size:190%;
+		float:left;
+	}
+}
+
+#download-button {
+	margin-top:60px;
+}

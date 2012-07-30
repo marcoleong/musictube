@@ -15,7 +15,7 @@ class Music
 
     public static $statusCode = array( 0 => 'NOT_CONVERTED',
                                        1 => 'CONVERTING',
-                                       2 => 'CONVERTED' );
+                                       2 => 'CONVERTED');
     /**
      * @var integer $id
      *
@@ -36,7 +36,7 @@ class Music
     /**
      * @var boolean $converted
      *
-     * @ORM\Column(name="status", type="int")
+     * @ORM\Column(name="status", type="integer")
      */
     private $status = 0;
 
@@ -60,6 +60,28 @@ class Music
      * @ORM\Column(name="videoId", type="string", length=255)
      */
     private $videoId;
+
+    /**
+     * @var string $downloadable
+     *
+     * @ORM\Column(name="downloadable", type="boolean")
+     */
+    private $downloadable;
+
+    /**
+     * @var string $downloadPath
+     *
+     * @ORM\Column(name="downloadPath", type="string", length=255, nullable=true)
+     */
+    private $downloadPath;
+
+    /**
+     * @var string $format
+     *
+     * @ORM\Column(name="format", type="string", length=10, nullable=true)
+     */
+    private $format;
+
 
     /**
      * Get id
@@ -179,5 +201,72 @@ class Music
     public function getVideoId()
     {
         return $this->videoId;
+    }
+
+    /**
+     * Set status
+     *
+     * @param int $status
+     * @return Music
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return int 
+     */
+    public function getStatus()
+    {
+        $statusCode = self::$statusCode;
+        return $statusCode[$this->status];
+    }
+
+    /**
+     * Set downloadable
+     *
+     * @param boolean $downloadable
+     * @return Music
+     */
+    public function setDownloadable($downloadable)
+    {
+        $this->downloadable = $downloadable;
+        return $this;
+    }
+
+    /**
+     * Get downloadable
+     *
+     * @return boolean 
+     */
+    public function getDownloadable()
+    {
+        return $this->downloadable;
+    }
+
+    /**
+     * Set downloadPath
+     *
+     * @param string $downloadPath
+     * @return Music
+     */
+    public function setDownloadPath($downloadPath)
+    {
+        $this->downloadPath = $downloadPath;
+        return $this;
+    }
+
+    /**
+     * Get downloadPath
+     *
+     * @return string 
+     */
+    public function getDownloadPath()
+    {
+        return $this->downloadPath;
     }
 }

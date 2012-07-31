@@ -1,4 +1,6 @@
+ForceType application/octet-stream .mp3
+
 <FilesMatch "\.(mov|mp3|jpg|pdf)$">
   Header set Content-Disposition attachment
-
+  ForceType application/octet-stream .mp3
 </FilesMatch>

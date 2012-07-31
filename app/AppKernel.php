@@ -24,7 +24,7 @@ class AppKernel extends Kernel
 
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Snc\RedisBundle\SncRedisBundle(),
-
+        new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle()
 
         );
 

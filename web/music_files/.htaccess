@@ -1,4 +1,4 @@
 <FilesMatch "\.(mov|mp3|jpg|pdf)$">
   Header set Content-Disposition attachment
-
+  AddType application/octet-stream .mp3
 </FilesMatch>

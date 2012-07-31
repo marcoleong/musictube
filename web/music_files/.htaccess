@@ -1,0 +1,4 @@
+<FilesMatch "\.(mov|mp3|jpg|pdf)$">
+  Header set Content-Disposition attachment
+
+</FilesMatch>

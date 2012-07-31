@@ -9,4 +9,4 @@ composer.phar
 app/config/parameters.yml
 Capfile
 app/config/deploy.rb
-web/music_files/*
+web/music_files/*.mp3

@@ -305,6 +305,10 @@ class MusicController extends Controller
             $response->headers->set('Content-Type', 'application/json');
             return $response;
         }
+
+        $response = new Response(json_encode(array('file_status' => 'NOT_READY')));
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
     /**
      * Check progress

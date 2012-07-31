@@ -1,6 +1,15 @@
 /* Author:
 
 */
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
 $(document).ready(function(){
 	$('#music-create-form').ajaxForm({
 		//success call back here
@@ -18,7 +27,7 @@ $(document).ready(function(){
 				var download_button = $("#download-button");
 				$.getJSON(Routing.generate('music_get_download_link', {videoId:_data.videoId}), function(data){
 					download_button.attr({"href": data.url });
-					download_button.show();
+					download_button.show('slow');
 				});
 						
 			}else{
@@ -37,7 +46,7 @@ $(document).ready(function(){
 						var download_button = $("#download-button");
 						$.getJSON(Routing.generate('music_get_download_link', {videoId:_data.videoId}), function(data){
 							download_button.attr({"href": data.url });
-							download_button.show();
+							download_button.show('slow');
 						});
 					}else{
 						//bind request progress request
@@ -60,8 +69,13 @@ $(document).ready(function(){
 
 										var download_button = $("#download-button");
 										$.getJSON(Routing.generate('music_get_download_link', {videoId:_data.videoId}), function(data){
-											download_button.attr({"href": data.url });
-											download_button.show();
+											if(data.file_status == 'NOT_READY'){
+												sleep(2000);
+											}else{
+												download_button.attr({"href": data.url });
+												download_button.show('slow');
+											}
+											
 										});
 										window.clearInterval();
 

@@ -8,6 +8,8 @@
 @import "bootstrap/layouts.less";
 @import "bootstrap/responsive.less";
 @import "bootstrap/progress-bars.less";
+@import "bootstrap/modals.less";
+@import "bootstrap/component-animations.less";
 
 html { 
 	background: url(/bundles/lmarcomusictube/img/bg02.jpg) no-repeat center center fixed; 
@@ -98,20 +100,10 @@ header {
 	width:100%;
 
 	& a{
-		font-family: 'Lato', sans-serif;
-		font-weight: 400;
 		font-style:italic;
 		text-decoration: none;
 		float:right;
-		padding: 10px;
-		color:#eaeaea;
-		&:hover {
-			color:#eaeaea;
-			border-bottom:1px dotted #eaeaea;
-		}
-		&:visited {
-			color:#eaeaea;
-		}
+		margin: 10px;
 	}
 }
 
@@ -139,4 +131,33 @@ footer {
 
 #download-button {
 	margin-top:60px;
+}
+
+.hide {
+	display:none;
+}
+
+.modal-backdrop {
+	background-color: transparent;
+}
+#aboutThis {
+	& a[data-dismiss="modal"] {
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	background-color:black;
+	opacity: 0.8%;
+	font-family: 'Lato', sans-serif;	
+	font-size: 130%;
+	font-weight: 300;
+	color:white;
+	padding:20px;
+	& a {
+		color: #4099FF;
+		&:hover {
+			text-decoration:none;
+		}
+	}
 }

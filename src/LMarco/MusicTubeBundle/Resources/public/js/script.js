@@ -1,4 +1,4 @@
-/* Author:
+/* Author: Marco Leong
 
 */
 
@@ -11,6 +11,10 @@ function sleep(milliseconds) {
   }
 }
 $(document).ready(function(){
+	$("#aboutThis").modal({
+		show: false
+	});
+
 	$('#music-create-form').ajaxForm({
 		//success call back here
 		dataType: "json",

@@ -6,7 +6,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.1.*",
+        "symfony/symfony": "2.1.0-BETA4",
         "doctrine/orm": "2.2.*",
         "doctrine/doctrine-bundle": "dev-master",
         "twig/extensions": "dev-master",

@@ -20,6 +20,19 @@ html {
 	}
 }
 
+a {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	color:#eaeaea;
+	&:hover {
+		color:#eaeaea;
+		border-bottom:1px dotted #eaeaea;
+	}
+	&:visited {
+		color:#eaeaea;
+	}
+}
+
 div[role="main"] {
 	.container;
 	height:100%;
@@ -81,29 +94,36 @@ div[role="main"] {
 		.buttonBackground(darken(#eaeaea,10%),#eaeaea);
 	}
 }
-header a{
-	font-family: 'Lato', sans-serif;
-	font-weight: 400;
-	font-style:italic;
-	text-decoration: none;
-	float:right;
-	margin: 5px 10% 0 0;
-	color:#eaeaea;
-	&:hover {
+header {
+	width:100%;
+
+	& a{
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
+		font-style:italic;
+		text-decoration: none;
+		float:right;
+		padding: 10px;
 		color:#eaeaea;
-		border-bottom:1px dotted #eaeaea;
-	}
-	&:visited {
-		color:#eaeaea;
+		&:hover {
+			color:#eaeaea;
+			border-bottom:1px dotted #eaeaea;
+		}
+		&:visited {
+			color:#eaeaea;
+		}
 	}
 }
+
+
 footer {
 	font-family: 'Lato', sans-serif;	
 	font-weight:300;
 	color:white;
-	.text-stroke-sim(#555, 1px);
+	width:100%;
+	// .text-stroke-sim(#555, 1px);
 	float:left;
-	padding-left:10px;
+	margin:0 20px 0 10px;
 }
 
 .progress {

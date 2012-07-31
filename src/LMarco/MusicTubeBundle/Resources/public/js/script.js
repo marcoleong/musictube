@@ -84,7 +84,7 @@ $(document).ready(function(){
 
 									}else{
 										$(progressBarRef).css("width", data +"%");
-										$(progressBarRef).text(data);
+										$(progressBarRef).text(data + "%");
 									}
 								}else{
 									window.clearInterval();

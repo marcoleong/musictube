@@ -41,7 +41,7 @@ class MusicController extends Controller
         $isFacebook = (strpos($request->server->get('HTTP_USER_AGENT'), 'facebook') !== false) ? true : false;
 
         return array(
-            'isFacebook' => "true",
+            'isFacebook' => $isFacebook,
         );
     }
 

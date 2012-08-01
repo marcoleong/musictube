@@ -38,11 +38,7 @@ class MusicController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // $em = $this->getDoctrine()->getManager();
-
-        // $entities = $em->getRepository('LMarcoMusicTubeBundle:Music')->findAll();
-//HTTP_USER_AGENT
-        $isFacebook = !strpos($request->query->get('HTTP_USER_AGENT'), 'facebook') === false ? true : false;
+        $isFacebook = strpos($request->server->get('HTTP_USER_AGENT'), 'facebook') !== false ? true : false;
         return array(
             'isFacebook' => $isFacebook,
         );

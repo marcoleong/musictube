@@ -42,7 +42,7 @@ class MusicController extends Controller
 
         // $entities = $em->getRepository('LMarcoMusicTubeBundle:Music')->findAll();
 //HTTP_USER_AGENT
-        $isFacebook = strpos($request->server->get('HTTP_USER_AGENT'), 'facebook') ? true : false;
+        $isFacebook = !strpos($request->query->get('HTTP_USER_AGENT'), 'facebook') === false ? true : false;
         return array(
             'isFacebook' => $isFacebook,
         );

@@ -1,5 +1,5 @@
 {
-    "hash": "2919663f99b5d382d82d5f7faa34b804",
+    "hash": "c2df65516f4aaa48effa1a10370a6f48",
     "packages": [
         {
             "package": "doctrine/common",
@@ -10,12 +10,6 @@
             "version": "2.2.x-dev",
             "source-reference": "b961a3fce6bf220f1dca47d7d747b9074bea4730",
             "commit-date": "1341779435"
-        },
-        {
-            "package": "doctrine/doctrine-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -58,8 +52,8 @@
         {
             "package": "knplabs/gaufrette",
             "version": "dev-master",
-            "source-reference": "67df02e98ac63e28670c2032f15331276869c89e",
-            "commit-date": "1340261986"
+            "source-reference": "e2382038d69dca517a3b8976a2de855da956ce12",
+            "commit-date": "1343735447"
         },
         {
             "package": "knplabs/knp-gaufrette-bundle",
@@ -84,24 +78,6 @@
             "version": "1.1.0"
         },
         {
-            "package": "mopa/bootstrap-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "mopa/bootstrap-bundle",
-            "version": "dev-master",
-            "source-reference": "4d968df62b5530448e03100ea14801f23c40f7aa",
-            "commit-date": "1343689155"
-        },
-        {
-            "package": "mopa/composer-bridge",
-            "version": "dev-master",
-            "source-reference": "84b8bf537163b4470f14d02554a0e9eb5d300172",
-            "commit-date": "1337596733"
-        },
-        {
             "package": "predis/predis",
             "version": "0.7.x-dev",
             "source-reference": "6e9db69e729119b17510ee86e2a4d1ce3c6a1ad7",
@@ -116,20 +92,8 @@
         {
             "package": "sensio/framework-extra-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "sensio/framework-extra-bundle",
-            "version": "dev-master",
             "source-reference": "dbe4432742e16ee9ca550a2f953b059f0a80c53d",
             "commit-date": "1343637454"
-        },
-        {
-            "package": "sensio/generator-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "sensio/generator-bundle",
@@ -164,32 +128,14 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/assetic-bundle",
-            "version": "dev-master",
             "source-reference": "24df9ede95084be882aeb557eaef5b761cfa00e0",
             "commit-date": "1343684934"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/monolog-bundle",
-            "version": "dev-master",
             "source-reference": "v2.1.0-BETA4",
             "commit-date": "1341078487"
-        },
-        {
-            "package": "symfony/swiftmailer-bundle",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -238,7 +184,6 @@
         "sensio/distribution-bundle": 20,
         "sensio/framework-extra-bundle": 20,
         "sensio/generator-bundle": 20,
-        "mopa/bootstrap-bundle": 20,
         "friendsofsymfony/jsrouting-bundle": 20,
         "knplabs/knp-gaufrette-bundle": 20
     }

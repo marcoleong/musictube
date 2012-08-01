@@ -11,6 +11,8 @@ use LMarco\MusicTubeBundle\Form\MusicType;
 use Symfony\Component\Process\Process;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+
 use LMarco\MusicTubeBundle\Entity\MusicManager;
 
 use LMarco\MusicTubeBundle\InfoExtractor\YouTubeExtractor;
@@ -34,14 +36,15 @@ class MusicController extends Controller
      * @Route("/", name="music")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        // $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('LMarcoMusicTubeBundle:Music')->findAll();
-
+        // $entities = $em->getRepository('LMarcoMusicTubeBundle:Music')->findAll();
+//HTTP_USER_AGENT
+        $isFacebook = strpos($request->server->get('HTTP_USER_AGENT'), 'facebook') ? true : false;
         return array(
-            'entities' => $entities,
+            'isFacebook' => $isFacebook,
         );
     }
 

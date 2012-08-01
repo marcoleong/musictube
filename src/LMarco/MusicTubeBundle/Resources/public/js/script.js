@@ -11,6 +11,8 @@ function sleep(milliseconds) {
   }
 }
 $(document).ready(function(){
+	Cufon.replace('.androgyne_medium', { fontFamily: 'Androgyne Medium', hover: true });
+
 	$("#aboutThis").modal({
 		show: false
 	});
@@ -22,11 +24,18 @@ $(document).ready(function(){
 			//fire start download request;
 			var _data = data;
 			if(data.progress === 'CONVERTED'){
-				var doneProgressBar = '<div  class="progress progress-success progress-striped active" id="progress-bar-'+_data.videoId+'"> <div class="bar" style=" width: 100%;">Done</div></div>';
+				var doneProgressBar = '<div  class="progress progress-success progress-striped" id="progress-bar-'+_data.videoId+'"> <div class="bar" style=" width: 100%;">Done</div></div>';
 					// create an progree bar with specific id.
 				$('#send-button').hide('fast');
-				$('#music-create-form').html(doneProgressBar);
-
+				$("#music-create-form").children().hide();
+				$("#music-create-form").append(doneProgressBar);
+				// $('#music-create-form').html(doneProgressBar);
+				$('#progress-bar-'+_data.videoId).click(function(){
+					$(this).remove();
+					$("#music-create-form").children().show();
+					$("#download-button").hide();
+					$("#music-create-form").resetForm();
+				});
 				//show download button
 				var download_button = $("#download-button");
 				$.getJSON(Routing.generate('music_get_download_link', {videoId:_data.videoId}), function(data){
@@ -46,6 +55,13 @@ $(document).ready(function(){
 						// create an progree bar with specific id.
 						$('#send-button').hide('fast');
 						$('#music-create-form').html(doneProgressBar);
+
+						$('#progress-bar-'+_data.videoId).click(function(){
+							$(this).remove();
+							$("#music-create-form").children().show();
+							$("#download-button").hide();
+							$("#music-create-form").resetForm();
+						});
 						//show download button
 						var download_button = $("#download-button");
 						$.getJSON(Routing.generate('music_get_download_link', {videoId:_data.videoId}), function(data){
@@ -71,9 +87,17 @@ $(document).ready(function(){
 										$(progressBarRef).css("width", data +"%");
 										$(progressBarRef).text('DONE');
 
+										$('#progress-bar-'+_data.videoId).click(function(){
+											$(this).remove();
+											$("#music-create-form").children().show();
+											$("#download-button").hide();
+											$("#music-create-form").resetForm();
+										});
 										var download_button = $("#download-button");
+										var videoId = _data.videoId;
 										$.getJSON(Routing.generate('music_get_download_link', {videoId:_data.videoId}), function(data){
 											if(data.file_status == 'NOT_READY'){
+												$('#progress-bar-'+videoId+ ' > .bar').html('<blink>Converting...</blink>');
 												sleep(2000);
 											}else{
 												download_button.attr({"href": data.url });
@@ -93,7 +117,6 @@ $(document).ready(function(){
 								}else{
 									window.clearInterval();
 								}
-								
 							});
 						};
 						window.setInterval(setProgress, 1000);

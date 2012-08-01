@@ -1,10 +1,11 @@
 <center>
-		<div id="jamtube-logo"><span>Beta</span></div>
-		<form action="{{ path('music_create') }}" method="post" {{ form_enctype(form) }} id="music-create-form">		    
-		    {{ form_widget(form.youTubeUrl , {'attr': { 'placeholder':'Copy URL here' } }) }}
+	<div id="jamtube-logo"><span>Beta</span></div>
+	<span style="color:#EEE" class="androgyne_medium">JamTube is a service that allows you to convert YouTube to MP3 without plugins</span>
+	<form action="{{ path('music_create') }}" method="post" {{ form_enctype(form) }} id="music-create-form">		    
+	    {{ form_widget(form.youTubeUrl , {'attr': { 'placeholder':'Copy URL here' } }) }}
 
-		    {{ form_rest(form) }}
-		        <button id="send-button"type="submit">Get it !</button>    
-		</form>
-		<a style="display:none;" id="download-button" href="#" target="_blank"><img src="/bundles/lmarcomusictube/img/download.png" /></a>
+	    {{ form_rest(form) }}
+	        <button id="send-button"type="submit">Get it !</button>    
+	</form>
+	<a style="display:none;" id="download-button" href="#" target="_blank"><img src="/bundles/lmarcomusictube/img/download.png" /></a>
 </center>	

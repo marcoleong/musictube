@@ -26,13 +26,11 @@ a {
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
 	color:#eaeaea;
-	&:hover {
-		color:#eaeaea;
-		border-bottom:1px dotted #eaeaea;
-	}
-	&:visited {
-		color:#eaeaea;
-	}
+
+	&:link {text-decoration: none;}
+	&:hover {color:darken(#eaeaea,10%);}
+	&:visited {color:#eaeaea;}
+	&:active {text-decoration: none;}
 }
 
 div[role="main"] {
@@ -44,7 +42,7 @@ div[role="main"] {
 //the input tag
 #music-create-form {
 	width: 60%;
-	margin-top:80px;
+	margin-top:40px;
 	position:relative;
 	& > input:first-child {
 		color: #333;
@@ -75,6 +73,7 @@ div[role="main"] {
 	width:255px; 
 	background-size: 255px 72px;
 	margin-top:20%;
+	margin-bottom:10px;
 	position:relative;
 	& > span {
 		font-style:italic;
@@ -141,12 +140,6 @@ footer {
 	background-color: transparent;
 }
 #aboutThis {
-	& a[data-dismiss="modal"] {
-		text-decoration: none;
-		&:hover {
-			text-decoration: none;
-		}
-	}
 	.border-radius(0px);
 	background-color:black;
 	opacity: 0.8%;
@@ -155,10 +148,11 @@ footer {
 	font-weight: 300;
 	color:white;
 	padding:20px;
-	& a {
+	& > a {
 		color: #4099FF;
-		&:hover {
-			text-decoration:none;
-		}
+		&:link {text-decoration: none;}
+		&:hover {text-decoration: none; color:darken(#4099FF,30%);}
+		&:visited {text-decoration: none;}
+		&:active {text-decoration: none;}
 	}
 }

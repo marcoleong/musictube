@@ -34,26 +34,29 @@ class YouTubeDownloadJob
 
 		$env = array("PATH" => "/usr/local/bin/jamtube:/usr/bin");
 		$this->downloadProcess = new Process(
-			sprintf("%s --extract-audio --audio-format mp3 --audio-quality 320k '%s'", self::$youtubeDl, $this->url), 
+			sprintf("%s --extract-audio --audio-format mp3 -k --audio-quality 320k '%s'", self::$youtubeDl, $this->url), 
 			$this->cwd, //working directory
 			$env, //env
 			null,
 			1000); //time out
 
 		$jobId = $this->jobId;
-		$this->downloadProcess->run(function ($type, $buffer) use (&$predis, $jobId) {
-                if ('err' === $type) {
-                    $predis->set($jobId,'ERR > '.$buffer);
-                } else {
-                	$matches = array();
-                	preg_match('/([0-9\.]+%)/',$buffer, $matches);
-                	if(count($matches) > 0){
-                		$percent = floatval($matches[0]);
-	                	$predis->set($jobId, $percent);
-                	}
-                }
-            }
-        );
+		if(!$this->isJobRunning){
+			$this->downloadProcess->run(function ($type, $buffer) use (&$predis, $jobId) {
+	                if ('err' === $type) {
+	                    $predis->set($jobId,'ERR > '.$buffer);
+	                } else {
+	                	$matches = array();
+	                	preg_match('/([0-9\.]+%)/',$buffer, $matches);
+	                	if(count($matches) > 0){
+	                		$percent = floatval($matches[0]);
+		                	$predis->set($jobId, $percent);
+	                	}
+	                }
+	            }
+	        );
+		}
+		
 
 	}
 
@@ -63,5 +66,15 @@ class YouTubeDownloadJob
 		$process = new Process("");
 	}
 
+	private function isJobRunning($jobId, $predis){
+		$exist = $predis->keys($jobId);
+    	$matches = array();
+		preg_match('/([0-9\.]+%)/',$buffer, $matches);
+		if($exist && count($matches) > 0 && $matches[0] !== 100){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 }

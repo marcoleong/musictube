@@ -61,9 +61,9 @@ class MusicManager
 	public function makeDownloadable(Music $entity)
 	{
 		$webPath = $this->container->getParameter('kernel.root_dir').'/../web/music_files/';
+		$this->updateLocalPath($entity);
 
 		if($this->isInDirectory($entity, $webPath)){
-			$this->updateLocalPath($entity);
 			$entity->setDownloadable(true);
 			$this->em->flush($entity);
 			return;
@@ -82,9 +82,7 @@ class MusicManager
 	public function moveTo(Music $entity, $directory)
 	{
 		$this->updateLocalPath($entity);
-		$content = file_get_contents($entity->getLocalPath());
-		$toFs = $this->getLocalFileSystem($directory);
-		$toFs->write($entity->getFilename(), $content);
+		exec(sprintf("mv %s %s", $entity->getLocalPath(), $directory."."));
 	}
 
 

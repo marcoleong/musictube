@@ -41,7 +41,7 @@ class YouTubeDownloadJob
 			1000); //time out
 
 		$jobId = $this->jobId;
-		if(!$this->isJobRunning){
+		if(!$this->isJobRunning($jobId,$predis)){
 			$this->downloadProcess->run(function ($type, $buffer) use (&$predis, $jobId) {
 	                if ('err' === $type) {
 	                    $predis->set($jobId,'ERR > '.$buffer);
@@ -66,11 +66,11 @@ class YouTubeDownloadJob
 		$process = new Process("");
 	}
 
-	private function isJobRunning($jobId, $predis){
-		$exist = $predis->keys($jobId);
+	public function isJobRunning($jobId, $predis){
+		$exist = $predis->get($jobId);
     	$matches = array();
-		preg_match('/([0-9\.]+%)/',$buffer, $matches);
-		if($exist && count($matches) > 0 && $matches[0] !== 100){
+		preg_match('/([0-9\.]+)/',$exist, $matches);
+		if(count($matches) > 0 && $matches[0] !== 100){
 			return true;
 		}else{
 			return false;

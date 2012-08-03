@@ -29,8 +29,6 @@ class YouTubeDownloadJob
 	public function process()
 	{
 		$predis = $this->container->get('snc_redis.default');
-		$inputName = $this->jobId.'.mp4';
-		$outputName = $this->jobId.'.mp3';
 
 		$env = array("PATH" => "/usr/local/bin/jamtube:/usr/bin");
 		$this->downloadProcess = new Process(
@@ -56,7 +54,6 @@ class YouTubeDownloadJob
 	            }
 	        );
 		}
-		
 
 	}
 

@@ -83,6 +83,11 @@ class MusicManager
 	{
 		$this->updateLocalPath($entity);
 		exec(sprintf("mv %s %s", $entity->getLocalPath(), $directory."."));
+
+		$videoPath = preg_replace("/mp3$/i", "mp4", $entity->getLocalPath());
+		if(file_exist($videoPath)){
+			exec(sprintf("mv %s %s", $videoPath, $directory."."));
+		}
 	}
 
 

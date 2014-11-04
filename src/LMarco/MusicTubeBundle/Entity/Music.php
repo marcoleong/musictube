@@ -299,4 +299,9 @@ class Music
     {
         return $this->videoId.'.'.$this->format;
     }
+
+    public function getVideoFilename()
+    {
+        return $this->videoId.'.mp4';
+    }
 }

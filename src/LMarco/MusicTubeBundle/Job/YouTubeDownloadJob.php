@@ -57,11 +57,11 @@ class YouTubeDownloadJob
 
 	}
 
-	public function convert()
-	{
-		$predis = $this->container->get('snc_redis.default');
-		$process = new Process("");
-	}
+	// public function convert()
+	// {
+	// 	$predis = $this->container->get('snc_redis.default');
+	// 	$process = new Process("");
+	// }
 
 	public function isJobRunning($jobId, $predis){
 		$exist = $predis->get($jobId);
